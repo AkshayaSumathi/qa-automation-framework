@@ -15,7 +15,7 @@ public class SmokeTest {
     @Test
     public void homePageLoads(){
         try(Playwright playwright = Playwright.create()){
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(true));
             Page page = browser.newPage();
             HomePage homePage = new HomePage(page);
             homePage.navigateToHomePage();
