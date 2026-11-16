@@ -13,5 +13,11 @@ pipeline {
                 bat 'mvn test'
             }
         }
+
+        stage('Archive reports') {
+            steps {
+                        archiveArtifacts artifacts: 'target/surefire-reports/**, target/screenshots/**', allowEmptyArchive: true
+            }
+        }
     }
 }
